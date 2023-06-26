@@ -34,7 +34,7 @@ class Solution:
 
 
 
-        #DP approach
+        #DP
         res = max(nums)
         curMax,curMin = 1,1
         for n in nums:
