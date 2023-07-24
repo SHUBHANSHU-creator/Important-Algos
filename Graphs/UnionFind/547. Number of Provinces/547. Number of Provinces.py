@@ -10,6 +10,9 @@
 
 
 
+from ast import List
+
+
 class UF:
     def __init__(self,n):
         self.par = [i for i in range(n)]
