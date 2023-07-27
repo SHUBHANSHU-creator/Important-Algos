@@ -7,26 +7,26 @@
 #In this algo we need to calculate the minimum distance between each and every nodes
 
 class Solution:
-    def shortest_distance(self, matrix):
-	    #in the input the unreachable nodes are marked as -1, we can change it to inf to make code easier
-	    n = len(matrix)
-        inf = float('inf')
-	    for i in range(n):
-		    for j in range(n):
-		        if matrix[i][j] == -1:
-		            matrix[i][j] = inf
-		        if i == j:
-		            matrix[i][j] = 0
+	def shortest_distance(self, matrix):
+		#in the input the unreachable nodes are marked as -1, we can change it to inf to make code easier
+		n = len(matrix)
+		inf = float('inf')
+		for i in range(n):
+			for j in range(n):
+				if matrix[i][j] == -1:
+					matrix[i][j] = inf
+				if i == j:
+					matrix[i][j] = 0
 		
-        #Traverse to all the node starting from all the nodes and try to reach there via every node
-        #Take min of current assigned distance and new distance
-	    for via in range(n):
-	        for i in range(n):
-	            for j in range(n):
-	                matrix[i][j] = min(matrix[i][j], matrix[i][via] + matrix[via][j])
-		            
-        for i in range(n):
-            for j in range(n):
-                if matrix[i][j] == inf:
-                    matrix[i][j] = -1
+		#Traverse to all the node starting from all the nodes and try to reach there via every node
+		#Take min of current assigned distance and new distance
+		for via in range(n):
+			for i in range(n):
+				for j in range(n):
+					matrix[i][j] = min(matrix[i][j], matrix[i][via] + matrix[via][j])
+					
+		for i in range(n):
+			for j in range(n):
+				if matrix[i][j] == inf:
+					matrix[i][j] = -1
 		 
