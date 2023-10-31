@@ -30,3 +30,5 @@ class Solution:
         while stack:
             ans.append(stack.pop())
         return ans
+        # or
+        # return stack[::-1]
